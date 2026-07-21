@@ -1,0 +1,352 @@
+/* ===== Hội Nữ Trí Thức Việt-Nhật (VJIWU) — Style dùng chung ===== */
+
+:root {
+  --maroon: #7a1f3d;
+  --maroon-dark: #5c1730;
+  --gold: #c9a227;
+  --gold-light: #e6d5a3;
+  --cream: #faf6ef;
+  --ink: #2b2320;
+  --gray: #6b6058;
+  --white: #ffffff;
+  --radius: 10px;
+  --shadow: 0 6px 20px rgba(122, 31, 61, 0.08);
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Noto Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Noto Serif", Georgia, serif;
+  color: var(--maroon-dark);
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+a { color: var(--maroon); text-decoration: none; }
+a:hover { color: var(--gold); }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Header / Nav ===== */
+header.site-header {
+  background: var(--white);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.brand-text .name-vi {
+  font-weight: 700;
+  color: var(--maroon-dark);
+  font-size: 17px;
+  display: block;
+}
+
+.brand-text .name-en {
+  font-size: 12px;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+nav.main-nav a {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav.main-nav a.active,
+nav.main-nav a:hover {
+  color: var(--maroon);
+  border-bottom-color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--maroon-dark);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .menu-toggle { display: block; }
+  nav.main-nav {
+    display: none;
+    width: 100%;
+    order: 3;
+  }
+  nav.main-nav.open { display: block; }
+  nav.main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+  nav.main-nav li { border-top: 1px solid #eee; }
+  nav.main-nav a { display: block; padding: 12px 4px; }
+  .nav-wrap { flex-wrap: wrap; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color: var(--white);
+  padding: 70px 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(28px, 4vw, 42px);
+  max-width: 780px;
+  margin: 0 auto 16px;
+}
+
+.hero p {
+  color: var(--gold-light);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  font-size: 17px;
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--maroon-dark);
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  color: var(--maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold-light);
+}
+
+/* ===== Page header (non-home) ===== */
+.page-hero {
+  background: var(--maroon-dark);
+  color: var(--white);
+  padding: 48px 24px;
+  text-align: center;
+}
+.page-hero h1 { color: var(--white); margin-bottom: 8px; }
+.page-hero p { color: var(--gold-light); margin: 0; }
+
+/* ===== Sections ===== */
+section.block {
+  padding: 60px 0;
+}
+
+section.block.alt {
+  background: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-lede {
+  text-align: center;
+  color: var(--gray);
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+/* ===== Cards / Grid ===== */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  border-top: 4px solid var(--gold);
+}
+
+.card h3 { font-size: 18px; margin-bottom: 10px; }
+.card p { color: var(--gray); font-size: 14.5px; margin: 0; }
+
+/* ===== Board member cards ===== */
+.member-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  text-align: center;
+}
+
+.member-avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  color: var(--maroon-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 auto 14px;
+}
+
+.member-name { font-weight: 700; color: var(--maroon-dark); margin-bottom: 4px; }
+.member-role { color: var(--gold); font-size: 13.5px; font-weight: 600; margin-bottom: 6px; }
+.member-org { color: var(--gray); font-size: 13.5px; }
+
+.tag {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--maroon);
+  border: 1px solid var(--gold-light);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 12.5px;
+  margin-bottom: 8px;
+}
+
+/* ===== Timeline / list style ===== */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.info-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid #ecdfc7;
+}
+.info-list strong { color: var(--maroon-dark); }
+
+/* ===== Sample / placeholder banner ===== */
+.sample-note {
+  background: #fff8e6;
+  border: 1px dashed var(--gold);
+  color: #7a5f16;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+/* ===== Forms ===== */
+form.contact-form {
+  display: grid;
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+form.contact-form input,
+form.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #ddd0b0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--white);
+}
+form.contact-form label { font-weight: 600; font-size: 14px; margin-bottom: -8px; display: block; }
+
+/* ===== Footer ===== */
+footer.site-footer {
+  background: var(--ink);
+  color: #d8cfc6;
+  padding: 40px 24px 24px;
+  font-size: 14px;
+}
+footer.site-footer .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+footer.site-footer h4 { color: var(--gold-light); font-size: 15px; }
+footer.site-footer a { color: #d8cfc6; }
+footer.site-footer a:hover { color: var(--gold); }
+.footer-bottom {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #453b35;
+  color: #a9a09a;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  footer.site-footer .container { grid-template-columns: 1fr; }
+}
